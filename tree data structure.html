@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+    <title></title>
+    <script type="text/javascript">
+        function CreateNode() {
+            var pnode = document.createElement('p');
+            var tnode = document.createTextNode('1');
+            pnode.appendChild(tnode);
+            document.body.appendChild(pnode);
+        }
+        function ReplaceNode() {
+            var pnode = document.createElement('p');
+            var tnode = document.createTextNode('2');
+            pnode.appendChild(tnode);
+           
+                var oldnode = document.getElementsByTagName('p')[0];
+            oldnode.replaceNode(pnode, oldnode); 
+            //oldnode.parentNode.replaceChild(pnode,oldnode);
+        }
+        function RemoveNode() {
+            var oldnode = document.getElementsByTagName('p')[0];
+          
+            oldnode.parentNode.removeChild(oldnode);
+        }
+    </script>
+</head>
+<body>
+    <input id="Button1" type="button" value="create node" onclick="CreateNode();"/><br/>
+    <input id="Button2" type="button" value="replace node" onclick="ReplaceNode();"/><br/>
+    <input id="Button3" type="button" value="remove node" onclick="RemoveNode();"/>
+</body>
+</body>
+</html>
